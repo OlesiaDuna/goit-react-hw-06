@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import { useId } from "react";
 import css from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactSlice";
+import { addContact } from "../../redux/contactSlice.js";
 
 const initialValues = {
   name: "",
@@ -40,16 +40,12 @@ const ContactForm = () => {
     >
       <Form>
         <div className={css.formContainer}>
-          <label className={css.formLabel} htmlFor={nameFieldId}>
-            Name
-          </label>
+          <label htmlFor={nameFieldId}>Name</label>
           <Field type="text" name="name"></Field>
           <ErrorMessage name="name" component="span" />
         </div>
         <div className={css.formContainer}>
-          <label className={css.formLabel} htmlFor={telFieldId}>
-            Number
-          </label>
+          <label htmlFor={telFieldId}>Number</label>
           <Field type="tel" name="number"></Field>
           <ErrorMessage name="number" component="span" />
         </div>

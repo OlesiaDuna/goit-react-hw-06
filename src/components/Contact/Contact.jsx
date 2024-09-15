@@ -1,10 +1,10 @@
 import css from "./Contact.module.css";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactSlice";
+import { deleteContact } from "../../redux/contactSlice.js";
 import { BsFillTelephoneInboundFill } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
 
-const Contact = ({ id, name, number }) => {
+const Contact = ({ contact: { id, name, number } }) => {
   const dispatch = useDispatch();
   return (
     <>
